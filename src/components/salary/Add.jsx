@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { fetchDepartments, getEmployees } from '../../utils/EmployeeHelper'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import API from '../../api/api'
 
 const Add = () => {
     const [salary, setSalary] = useState({

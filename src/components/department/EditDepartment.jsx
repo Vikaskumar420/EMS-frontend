@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import API from '../../api/api'
 
 const EditDepartment = () => {
     const { id } = useParams()

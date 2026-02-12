@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { columns, EmployeeButton } from '../../utils/EmployeeHelper'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
-import API from '../../api/api'
 
 const List = () => {
 

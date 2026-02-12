@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { fetchDepartments } from '../../utils/EmployeeHelper'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import API from '../../api/api'
 
 const Add = () => {
     const [departments, setDepartments] = useState([])

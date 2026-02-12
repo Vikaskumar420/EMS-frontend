@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios';
-import API from '../api/api';
 const UserContext = createContext();
 const AuthContext = ({ children }) => {
 

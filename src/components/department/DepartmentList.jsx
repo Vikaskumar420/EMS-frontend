@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import DataTable from 'react-data-table-component'
 import { columns, DepartmentButton } from '../../utils/DepartmentHelper'
 import axios from 'axios'
-import API from '../../api/api'
 
 const DepartmentList = () => {
 

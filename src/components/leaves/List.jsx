@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import { columns, LeaveButton } from '../../utils/LeaveHelper'
 
 const List = () => {
