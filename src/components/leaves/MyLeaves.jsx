@@ -10,7 +10,7 @@ const MyLeaves = () => {
 
   const fetchLeaves = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/leave/${id}`, {
+      const response = await axios.get(`https://ems-server-bnxh.onrender.com/api/leave/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

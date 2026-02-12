@@ -17,7 +17,7 @@ const List = () => {
     const fetchEmployees = async () => {
       setEmpLoading(true)
       try {
-        const response = await axios.get("http://localhost:3000/api/employee", {
+        const response = await axios.get("https://ems-server-bnxh.onrender.com/api/employee", {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem('token')}`
           }
@@ -34,7 +34,7 @@ const List = () => {
               dept_name: emp?.department?.dept_name ||"N/A",
               name: emp?.userId?.name ||"N/A",
               dob: new Date(emp?.dob ||"N/A").toLocaleDateString(),
-              profileImage: <img className='rounded-full w-15 h-15' src={`http://localhost:3000/${emp?.userId?.profileImage ||"N/A"}`} />,
+              profileImage: <img className='rounded-full w-15 h-15' src={`https://ems-server-bnxh.onrender.com/${emp?.userId?.profileImage ||"N/A"}`} />,
               action: (<EmployeeButton Id={emp?._id ||"N/A"} />)
 
             }

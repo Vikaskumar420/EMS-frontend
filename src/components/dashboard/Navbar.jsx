@@ -15,7 +15,7 @@ const Navbar = () => {
   
 
   const imageUrl = user.profileImage
-    ? `http://localhost:3000/${user.profileImage}`
+    ? `https://ems-server-bnxh.onrender.com/${user.profileImage}`
     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1K1CFWvueNo3Q79DRRLHVTEI8taRKrAuGw&s"
 
   // Open device file picker

@@ -13,7 +13,7 @@ const AdminSummary = () => {
 
   const fetchDashboardData = async (req, res) => {
     try {
-      const response = await axios.get('http://localhost:3000/api/adminDashboard/summaryData', {
+      const response = await axios.get('https://ems-server-bnxh.onrender.com/api/adminDashboard/summaryData', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

@@ -16,7 +16,7 @@ const Detail = () => {
       setLeaveLoading(true)
 
       try {
-        const response = await axios.get(`http://localhost:3000/api/leave/detail/${id}`, {
+        const response = await axios.get(`https://ems-server-bnxh.onrender.com/api/leave/detail/${id}`, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem('token')}`
           }
@@ -42,7 +42,7 @@ const Detail = () => {
 
   const changeStatus = async (id, status) => {
     try {
-      const response = await axios.put(`http://localhost:3000/api/leave/${id}`, {status}, {
+      const response = await axios.put(`https://ems-server-bnxh.onrender.com/api/leave/${id}`, {status}, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`
         }
@@ -73,7 +73,7 @@ const Detail = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
               <div >
                 <img
-                  src={`http://localhost:3000/${leave?.employeeId?.userId?.profileImage || 'N/A'}`}
+                  src={`https://ems-server-bnxh.onrender.com/${leave?.employeeId?.userId?.profileImage || 'N/A'}`}
                   className='rounded-md border w-60 h-79 object-cover'
                 />
               </div>
