@@ -49,11 +49,7 @@ const MyLeaves = () => {
 
         {user?.role === "employee" && (
   <div className='flex justify-between items-center mb-5 '>
-    <input
-      type="text"
-      placeholder='Search By emp name'
-      className='px-4 py-0.5 bg-white rounded-lg border'
-    />
+    
 
     <Link
       to="/employee-dashboard/add-leave"
