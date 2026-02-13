@@ -21,15 +21,27 @@ import ViewMySalary from './components/employeeDashboard/ViewMySalary'
 import Setting from './components/employeeDashboard/Setting'
 import LeaveList from './components/leaves/List'
 import Detail from './components/leaves/Detail'
+import { useAuth } from './context/AuthContext'
 
 
 function App() {
 
+  const {user, loading} = useAuth();
+   if (loading) return <div>Loading...</div>;
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Navigate to="/admin-dashboard" />} ></Route>
+           <Route
+          path="/"
+          element={
+            user
+              ? user.role === "admin"
+                ? <Navigate to="/admin-dashboard" />
+                : <Navigate to="/employee-dashboard" />
+              : <Navigate to="/login" />
+          }
+        ></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/admin-dashboard' element={
           <PrivateRoutes>
@@ -60,7 +72,7 @@ function App() {
 
         <Route path='/employee-dashboard' element={
           <PrivateRoutes>
-            <RoleBaseRoutes requiredRole={["admin", "employee"]}>
+            <RoleBaseRoutes requiredRole={[ "employee"]}>
               <EmployeeDashboard />
             </RoleBaseRoutes>
           </PrivateRoutes>
