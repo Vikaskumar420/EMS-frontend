@@ -48,7 +48,7 @@ const MyLeaves = () => {
         </div>
 
         {user?.role === "employee" && (
-  <div className='flex justify-between items-center mb-5 '>
+  <div className='flex justify-end items-center mb-5 '>
     
 
     <Link
