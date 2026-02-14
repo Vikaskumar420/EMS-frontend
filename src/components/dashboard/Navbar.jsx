@@ -1,18 +1,18 @@
 import React, { useRef, useState } from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { FaUser, FaCamera } from "react-icons/fa"
+import axios from 'axios'
 
 
 const Navbar = () => {
-  const { user, logout } = useAuth()
+  const { user, logout, setUser } = useAuth()
   const [open, setOpen] = useState(false)
   const fileInputRef = useRef(null)
-  
 
   if (!user) return null;
 
-  
-  
+
+
 
   const imageUrl = user.profileImage
     ? `https://ems-server-bnxh.onrender.com/${user.profileImage}`
@@ -25,13 +25,37 @@ const Navbar = () => {
   }
 
   // When user selects image
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0]
-    if (!file) return
+    if (!file) return;
 
-    console.log("Selected file:", file)
-    // yahin se upload API call karoge (next step)
-  }
+    const formData = new FormData();
+    formData.append("profileImage", file);
+    console.log("Selected file:", file);
+    try {
+      const response = await axios.put(
+        `http://localhost:3000/api/auth/update-profile-image/${user._id}`,
+        formData,
+        {
+          headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          }
+        }
+      );
+
+      alert("Profile image updated successfully!");
+      setUser(response.data.user);
+      
+      
+      e.target.value = null;
+
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      alert("Failed to upload image");
+    }
+  };
+  // yahin se upload API call karoge (next step)
+
 
   return (
     <div className="relative flex items-center text-white justify-between h-12 bg-teal-600 px-5">
@@ -49,11 +73,12 @@ const Navbar = () => {
         {/* Hidden File Input */}
         <input
           type="file"
-          accept="image/*"
           ref={fileInputRef}
+          style={{ display: "none" }}
           onChange={handleFileChange}
-          className="hidden"
+          accept="image/*"
         />
+
 
         {/* Dropdown */}
         {open && (
