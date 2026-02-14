@@ -24,18 +24,25 @@ const List = () => {
         });
         // console.log(response.data);
         // console.log(response.data.employees);
+          const fallbackImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJTV8m0GWJQy9CxYQpyaS7sLU6bcjDsow0A&s";
 
         if (response.data.success) {
           let sno = 1;
-          const data =  response.data.employees.map((emp) => (
+          const data = response.data.employees.map((emp) => (
             {
-              _id: emp?._id ||"N/A",
+              _id: emp?._id || "N/A",
               sno: sno++,
-              dept_name: emp?.department?.dept_name ||"N/A",
-              name: emp?.userId?.name ||"N/A",
-              dob: new Date(emp?.dob ||"N/A").toLocaleDateString(),
-              profileImage: <img className='rounded-full w-15 h-15' src={`https://ems-server-bnxh.onrender.com/${emp?.userId?.profileImage ||"N/A"}`} />,
-              action: (<EmployeeButton Id={emp?._id ||"N/A"} />)
+              dept_name: emp?.department?.dept_name || "N/A",
+              name: emp?.userId?.name || "N/A",
+              dob: new Date(emp?.dob).toLocaleDateString() || "N/A",
+              profileImage: <img
+                className='rounded-full w-16 h-16 object-cover'
+                src={emp?.userId?.profileImage
+                  ? `https://ems-server-bnxh.onrender.com/${emp.userId.profileImage}`
+                  : fallbackImage}
+                alt={emp?.userId?.name || "Profile"}
+              />,
+              action: (<EmployeeButton Id={emp?._id || "N/A"} />)
 
             }
           ))
@@ -62,7 +69,7 @@ const List = () => {
     setFilteredEmployees(records);
   }
 
- 
+
 
 
   return (

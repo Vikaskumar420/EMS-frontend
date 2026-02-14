@@ -15,7 +15,7 @@ const Navbar = () => {
 
 
   const imageUrl = user.profileImage
-    ? `https://ems-server-bnxh.onrender.com/${user.profileImage}`
+    ? user.profileImage
     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1K1CFWvueNo3Q79DRRLHVTEI8taRKrAuGw&s"
 
   // Open device file picker
@@ -26,12 +26,12 @@ const Navbar = () => {
 
   // When user selects image
   const handleFileChange = async (e) => {
-    const file = e.target.files[0]
-    if (!file) return;
+  const file = e.target.files[0];
+  if (!file) return;
 
-    const formData = new FormData();
-    formData.append("profileImage", file);
-    console.log("Selected file:", file);
+  const formData = new FormData();
+  formData.append("image", file); // match your backend upload.single("image")
+    // console.log("Selected file:", file);
     try {
       const response = await axios.put(
         `http://localhost:3000/api/auth/update-profile-image/${user._id}`,

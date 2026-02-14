@@ -38,6 +38,7 @@ const View = () => {
     fetchEmployee();
   }, [])
 
+  const fallbackImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJTV8m0GWJQy9CxYQpyaS7sLU6bcjDsow0A&s";
 
   return (
     <>
@@ -51,34 +52,35 @@ const View = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             <div >
               <img
-                src={`https://ems-server-bnxh.onrender.com/${employee.userId.profileImage}`}
+                src={employee?.userId?.profileImage || fallbackImage}
+                alt={employee?.userId?.name || "Profile Image"}
                 className='rounded-md border w-60 h-79 object-cover'
               />
             </div>
             <div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Name</p>
-                <p className='font-medium'>{employee.userId.name}</p>
+                <p className='font-medium'>{employee?.userId?.name || "N/A"}</p>
               </div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Employee ID</p>
-                <p className='font-medium'>{employee.employeeId}</p>
+                <p className='font-medium'>{employee?.employeeId || "N/A"}</p>
               </div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Date of Birth</p>
-                <p className='font-medium'>{new Date(employee.dob).toLocaleDateString()}</p>
+                <p className='font-medium'>{new Date(employee?.dob).toLocaleDateString() || "N/A"}</p>
               </div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Gender</p>
-                <p className='font-medium'>{employee.gender}</p>
+                <p className='font-medium'>{employee?.gender || "N/A"}</p>
               </div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Department</p>
-                <p className='font-medium'>{employee.department.dept_name}</p>
+                <p className='font-medium'>{employee?.department?.dept_name || "N/A"}</p>
               </div>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Marital Status</p>
-                <p className='font-medium'>{employee.maritalStatus}</p>
+                <p className='font-medium'>{employee?.maritalStatus || "N/A"}</p>
               </div>
 
             </div>
