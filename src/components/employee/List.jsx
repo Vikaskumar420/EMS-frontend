@@ -36,9 +36,9 @@ const List = () => {
               name: emp?.userId?.name || "N/A",
               dob: new Date(emp?.dob).toLocaleDateString() || "N/A",
               profileImage: <img
-                className='rounded-full w-16 h-16 object-cover'
+                className='rounded-full w-12 h-12 object-cover'
                 src={emp?.userId?.profileImage
-                  ? `https://ems-server-bnxh.onrender.com/${emp.userId.profileImage}`
+                  ? emp?.userId?.profileImage
                   : fallbackImage}
                 alt={emp?.userId?.name || "Profile"}
               />,

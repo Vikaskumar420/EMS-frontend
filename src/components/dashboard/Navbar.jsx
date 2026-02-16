@@ -34,7 +34,7 @@ const Navbar = () => {
     // console.log("Selected file:", file);
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/auth/update-profile-image/${user._id}`,
+        `https://ems-server-bnxh.onrender.com/api/auth/update-profile-image/${user._id}`,
         formData,
         {
           headers: {
@@ -70,38 +70,17 @@ const Navbar = () => {
           className="w-8 h-8 rounded-full object-cover border-2 border-white cursor-pointer"
         />
 
-        {/* Hidden File Input */}
-        <input
-          type="file"
-          ref={fileInputRef}
-          style={{ display: "none" }}
-          onChange={handleFileChange}
-          accept="image/*"
-        />
+        
 
 
         {/* Dropdown */}
         {open && (
-          <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg z-50">
-            <button
-              className="flex items-center gap-2 w-full px-4 py-2 text-sm hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
-              <FaUser /> <p>Profile</p>
-            </button>
-
-            <button
-              className="flex items-center gap-2 w-full px-4 py-2 text-sm hover:bg-gray-100"
-              onClick={handleChangeImageClick}
-            >
-              <FaCamera /> Change Profile Image
-            </button>
-
-            <hr />
+          <div className="absolute right-0 mt-2 w-48 bg-gray-100 text-black  shadow-lg z-50">
+          
 
             <button
               onClick={logout}
-              className="w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+              className="w-full px-4 py-2 text-sm font-bold text-red-600 hover:text-white hover:rounded-lg hover:bg-gray-900"
             >
               Logout
             </button>
