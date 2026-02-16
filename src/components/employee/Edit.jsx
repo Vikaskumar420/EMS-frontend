@@ -8,9 +8,10 @@ const Edit = () => {
         name: '',
         maritalStatus: '',
         salary: '',
-        designation:'',
-        department:'',
-        
+        designation: '',
+        department: '',
+        image: null
+
     })
     const [departments, setDepartments] = useState(null)
     // const [formData, setFormData] = useState({})
@@ -71,28 +72,42 @@ const Edit = () => {
 
     // Handle submit
     const handleSubmit = async (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        try {
-            const response = await axios.put(
-                `https://ems-server-bnxh.onrender.com/api/employee/${id}`,
-                employee, {
+    try {
+        const formData = new FormData();
+
+        formData.append("name", employee.name);
+        formData.append("maritalStatus", employee.maritalStatus);
+        formData.append("salary", employee.salary);
+        formData.append("designation", employee.designation);
+        formData.append("department", employee.department);
+
+        if (employee.image) {
+            formData.append("image", employee.image);
+        }
+
+        const response = await axios.put(
+            `https://ems-server-bnxh.onrender.com/api/employee/${id}`,
+            formData,
+            {
                 headers: {
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    "Content-Type": "multipart/form-data"
                 }
-            });
-            if (response.data.success) {
-
-                navigate("/admin-dashboard/employees")
             }
-        } catch (error) {
-            if (error.response && !error.response.data.success) {
-                alert(error.response.data.error)
+        );
 
+        if (response.data.success) {
+            navigate("/admin-dashboard/employees");
+        }
 
-            }
+    } catch (error) {
+        if (error.response && !error.response.data.success) {
+            alert(error.response.data.error);
         }
     }
+};
 
     return (
         <>{departments && employee ? (
@@ -187,20 +202,19 @@ const Edit = () => {
                         </div>
 
                         {/* Image Upload */}
-                        {/* <div>
+                        <div className='col-span-2'>
                             <label className='block font-medium text-sm text-gray-700'>
-                                Image Upload
+                                Profile Image
                             </label>
                             <input
-                                onChange={handleChange}
                                 type="file"
-                                required
-                                name='image'
-                                placeholder='Upload Image'
-                                accept='image/*'
+                                accept="image/*"
+                                onChange={(e) =>
+                                    setEmployee({ ...employee, image: e.target.files[0] })
+                                }
                                 className='mt-1 w-full p-2 border border-gray-300 rounded-md'
                             />
-                        </div> */}
+                        </div>
 
                     </div>
 
