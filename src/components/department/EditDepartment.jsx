@@ -60,7 +60,7 @@ const EditDepartment = () => {
 
     return (
         <>{deptLoading ? <div>Loading...</div> :
-            <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md w-96'>
+            <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md hover:shadow-black w-96'>
                 <h2 className='text-2xl font-bold mb-6'>Edit Department</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -98,7 +98,7 @@ const EditDepartment = () => {
                     </div>
                     <button
                         type='submit'
-                        className='w-full bg-teal-600 mt-6 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded '
+                        className='w-full bg-teal-600 mt-6 hover:bg-teal-700 hover:text-shadow-2xs text-shadow-black hover:shadow-lg shadow-black text-white font-bold py-2 px-4 rounded '
                     >
                         Edit Department
                     </button>

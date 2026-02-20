@@ -67,7 +67,7 @@ const Detail = () => {
       {leaveLoading ? (
         <div className="text-center mt-10">Loading...</div>
       ) : leave ? (
-        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md'>
+        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md shadow-black'>
           <h2 className='text-2xl font-bold mb-8 text-center'>
             Leave Details
           </h2>
@@ -75,7 +75,7 @@ const Detail = () => {
             <div >
               <img
                 src={leave?.employeeId?.userId?.profileImage || 'N/A'}
-                className='rounded-md border w-60 h-79 object-cover'
+                className='rounded-md border w-60 h-79 object-cover transition-all duration-300 hover:shadow-lg  hover:shadow-black hover:border-black'
               />
             </div>
             <div>
@@ -111,10 +111,10 @@ const Detail = () => {
                 <p className='text-lg font-bold'>{leave.status === "Pending" ? "Action" : "Status"}</p>
                 {leave.status === "Pending" ? (
                   <div className='flex space-x-2 text-white font-bold'>
-                    <button className='bg-green-600 hover:bg-green-700 py-1 px-2 rounded-md'
+                    <button className='bg-green-600 hover:bg-green-800 shadow-md hover:shadow-black py-1 px-2 rounded-md'
                       onClick={() => changeStatus(leave._id, "Approved")}
                     >Approve</button>
-                    <button className='bg-red-600 hover:bg-red-700 py-1 px-4 rounded-md'
+                    <button className='bg-red-600 hover:bg-red-800 shadow-md hover:shadow-black py-1 px-4 rounded-md'
                       onClick={() => changeStatus(leave._id, "Rejected")}
                     >Reject</button>
                   </div>

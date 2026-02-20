@@ -56,7 +56,7 @@ const Add = () => {
     }
 
     return (
-        <div className='max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md'>
+        <div className='max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-xl shadow-black'>
             <h2 className='text-2xl font-bold mb-6'>Add New Employee</h2>
             <form onSubmit={handleSubmit} >
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -259,7 +259,7 @@ const Add = () => {
 
                 <button
                     type='submit'
-                    className='w-full bg-teal-600 mt-6 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded '
+                    className='w-full bg-teal-600 mt-6 hover:bg-teal-700 hover:text-shadow-2xs text-shadow-black hover:shadow-lg shadow-black text-white font-bold py-2 px-4 rounded '
                 >
                     Add Employee
                 </button>

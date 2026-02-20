@@ -101,7 +101,7 @@ const Setting = () => {
 
                 <button
                     type="submit"
-                    className='w-full mt-6 bg-teal-600 hover:bg-teal-700 p-2 text-white font-bold py-2 px-4 rounded-md cursor-pointer'>
+                    className='w-full mt-6 bg-teal-600 hover:bg-teal-700 hover:text-shadow-2xs text-shadow-black hover:shadow-lg shadow-black p-2 text-white font-bold py-2 px-4 rounded-md cursor-pointer'>
                     Change Password
                 </button>
             </form>

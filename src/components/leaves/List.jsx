@@ -92,19 +92,19 @@ const filterByButton = (status)=>{
         />
 
         <div className='space-x-3 '>
-          <button className='px-2 py-1 text-white bg-teal-500 shadow-lg hover:bg-teal-700 rounded-md'
+          <button className='px-2 py-1 text-white bg-teal-600 shadow-lg hover:shadow-black text-shadow-2xs hover:text-shadow-black hover:bg-teal-800 rounded-md'
           onClick={()=>filterByButton("Pending")}
           >Pending</button>
-        <button className='px-2 py-1 text-white bg-teal-500 shadow-lg hover:bg-teal-700 rounded-md'
+        <button className='px-2 py-1 text-white bg-teal-600 shadow-lg hover:shadow-black text-shadow-2xs hover:text-shadow-black hover:bg-teal-800 rounded-md'
         onClick={()=>filterByButton("Approved")}
         >Approved</button>
-        <button className='px-2 py-1 text-white bg-teal-500 shadow-lg hover:bg-teal-700 rounded-md'
+        <button className='px-2 py-1 text-white bg-teal-600 shadow-lg hover:shadow-black text-shadow-2xs hover:text-shadow-black hover:bg-teal-800 rounded-md'
         onClick={()=>filterByButton("Rejected")}
         >Rejected</button>
         </div>
       </div>
 
-      <div className='mt-3'>
+      <div className='mt-3 shadow-md shadow-black'>
         <DataTable columns={columns} data={filteredLeaves} pagination />
       </div>
     </div>

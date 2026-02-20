@@ -53,7 +53,7 @@ const MyLeaves = () => {
 
     <Link
       to="/employee-dashboard/add-leave"
-      className='px-4 py-1 bg-teal-600 rounded-lg text-white hover:bg-teal-700'
+      className='px-4 py-1 bg-teal-600 rounded-lg transition-all duration-300 hover:-translate-1 hover:text-shadow-2xs text-shadow-black hover:shadow-lg shadow-black text-white hover:bg-teal-700'
     >
       Add New Leave
     </Link>
@@ -62,9 +62,9 @@ const MyLeaves = () => {
 
 
         {/* List of Leaves */}
-        <table className='w-full text-sm text-left text-gray-500'>
+        <table className='w-full text-sm text-left text-gray-500 shadow-md shadow-black'>
           <thead className='text-xs text-gray-700 uppercase bg-gray-50 border border-gray-200 '>
-            <tr>
+            <tr className='text-shadow-2xs '>
               <th className='px-6 py-3'>SNO</th>
               <th className='px-6 py-3'>LeaveType</th>
               <th className='px-6 py-3'>From</th>

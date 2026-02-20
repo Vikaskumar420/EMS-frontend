@@ -74,7 +74,7 @@ const DepartmentList = () => {
             placeholder='Search By Department'
             className='px-4 py-0.5 bg-white rounded-lg border' />
           <Link to="/admin-dashboard/add-department"
-            className='px-4 py-1 bg-teal-500 font-bold hover:-translate-1 transition-all duration-300 shadow-lg hover:shadow-black hover:text-shadow-2xs text-shadow-black rounded-lg text-white hover:bg-teal-600'
+            className='px-4 py-1 bg-teal-600 font-bold hover:-translate-1 transition-all duration-300 shadow-lg hover:shadow-black hover:text-shadow-2xs text-shadow-black rounded-lg text-white hover:bg-teal-800'
           >
             Add New Department
           </Link>

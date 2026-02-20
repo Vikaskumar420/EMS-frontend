@@ -45,7 +45,7 @@ const AdminSummary = () => {
       <div 
       className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 '>
         <div 
-        className='cursor-pointer shadow-md hover:shadow-lg shadow-black'
+        className='cursor-pointer shadow-md  shadow-black'
         onClick={()=>navigate('/admin-dashboard/employees')}>
         <SummaryCard icon={<FaUsers />}
           text="Total Employees"

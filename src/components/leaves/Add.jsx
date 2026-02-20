@@ -35,10 +35,10 @@ const handleSubmit= async (e)=>{
 }
 
   return (
-    <div className='max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md'>
+    <div className='max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md shadow-black'>
       <h2 className='text-2xl font-bold mb-6 '>Request for Leave</h2>
       <form onSubmit={handleSubmit}>
-        <div className='flex flex-col space-y-4'>
+        <div className='flex flex-col space-y-4 '>
           <div>
             <label className='block text-sm font-medium text-gray-700'>
               Leave Type
@@ -99,7 +99,7 @@ const handleSubmit= async (e)=>{
               ></textarea>
             </div>
           <button type='submit'
-          className='w-full mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-md'
+          className='w-full mt-6 bg-teal-600 hover:bg-teal-700 hover:shadow-md shadow-black text-white font-bold py-2 px-4 rounded-md'
           >Add Leave</button>
         </div>
       </form>
