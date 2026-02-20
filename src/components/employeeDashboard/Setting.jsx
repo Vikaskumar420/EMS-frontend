@@ -58,7 +58,7 @@ const Setting = () => {
 
     return (
 
-        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md w-96'>
+        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-lg shadow-black w-96'>
             <h2 className='text-2xl font-bold mb-6'>Change Password</h2>
             <p className='text-red-500'>{error}</p>
             <form onSubmit={handleSubmit}>

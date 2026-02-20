@@ -45,7 +45,7 @@ const AdminSummary = () => {
       <div 
       className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 '>
         <div 
-        className='cursor-pointer'
+        className='cursor-pointer shadow-md hover:shadow-lg shadow-black'
         onClick={()=>navigate('/admin-dashboard/employees')}>
         <SummaryCard icon={<FaUsers />}
           text="Total Employees"
@@ -54,7 +54,7 @@ const AdminSummary = () => {
         />
         </div>
         <div
-        className='cursor-pointer'
+        className='cursor-pointer shadow-md  shadow-black'
          onClick={()=>navigate('/admin-dashboard/departments')}>
         <SummaryCard icon={<FaBuilding />}
           text="Total Department"
@@ -62,7 +62,7 @@ const AdminSummary = () => {
           color="bg-yellow-600"
         />
         </div>
-        <div>
+        <div className='shadow-md shadow-black'>
         <SummaryCard icon={<FaMoneyBillWave />}
           text="Total Salary"
           number={`₹ ${dashboard.totalSalary}`}
@@ -71,11 +71,11 @@ const AdminSummary = () => {
         </div>
       </div>
 
-      <div className='mt-12'>
+      <div className='mt-12 '>
         <h4 className='text-2xl text-center font-bold'>Leave Details</h4>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mt-6'>
           <div 
-          className='cursor-pointer'
+          className='cursor-pointer shadow-md  shadow-black'
           onClick={()=> navigate('/admin-dashboard/leaves')}>
             <SummaryCard icon={<FaFileAlt />}
             text="Leave Applied"
@@ -83,21 +83,27 @@ const AdminSummary = () => {
             color="bg-teal-600"
           />
           </div>
-          <SummaryCard icon={<FaCheckCircle />}
+          <div className='shadow-md  shadow-black'>
+            <SummaryCard icon={<FaCheckCircle />}
             text="Leave Approved"
             number={dashboard.leaveApproved}
             color="bg-green-600"
           />
-          <SummaryCard icon={<FaHourglassHalf />}
+          </div>
+          <div className='shadow-md  shadow-black'>
+            <SummaryCard icon={<FaHourglassHalf />}
             text="Leave Pending"
             number={dashboard.leavePending}
             color="bg-yellow-600"
           />
-          <SummaryCard icon={<FaTimesCircle />}
+          </div>
+          <div className='shadow-md  shadow-black'>
+            <SummaryCard icon={<FaTimesCircle />}
             text="Leave Rejected"
             number={dashboard.leaveRejected}
             color="bg-red-600"
           />
+          </div>
         </div>
       </div>
     </div>

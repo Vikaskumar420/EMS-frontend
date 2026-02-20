@@ -5,7 +5,7 @@ const AdminSidebar = () => {
   return (
     <div className='bg-gray-800 text-white h-screen fixed left-0 top-0 bottom-0 space-y-2 w-64'>
       <div className='bg-teal-600 h-12 flex items-center justify-center'>
-        <h3 className='text-3xl italic text-center font-bold font-sevillana'>Employee MS</h3>
+        <h3 className='text-3xl italic text-center font-bold font-sevillana text-shadow-2xs text-shadow-black'>Employee MS</h3>
       </div>
       <div className='px-4'>
         <NavLink to="/admin-dashboard"
@@ -16,7 +16,7 @@ const AdminSidebar = () => {
           <span>Dashboard</span>
         </NavLink>
         <NavLink to="/admin-dashboard/employees"
-          className={({ isActive }) => `${isActive ? "bg-teal-500" : " "} flex items-center space-x-4 px-4 py-2.5 rounded `}
+          className={({ isActive }) => `${isActive ? "bg-teal-500 " : " "} flex items-center space-x-4 px-4 py-2.5 rounded `}
           end
         >
           <FaUsers />

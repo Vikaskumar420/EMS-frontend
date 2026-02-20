@@ -45,19 +45,19 @@ const View = () => {
       {empLoading ? (
         <div className="text-center mt-10">Loading...</div>
       ) : employee ? (
-        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md'>
+        <div className='max-w-3xl mx-auto mt-10 bg-white p-8 rounded-md shadow-lg shadow-black '>
           <h2 className='text-2xl font-bold mb-8 text-center'>
             Employee Details
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-            <div >
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6  '>
+            <div>
               <img
                 src={employee?.userId?.profileImage || fallbackImage}
                 alt={employee?.userId?.name || "Profile Image"}
-                className='rounded-md border w-60 h-79 object-cover'
+                className='rounded-md  border w-60 h-79 object-cover  transition-all duration-300 hover:shadow-xl  hover:shadow-black hover:border-black'
               />
             </div>
-            <div>
+            <div className=' p-5 transition-all duration-300 hover:shadow-xl hover:rounded-2xl  hover:shadow-black hover:border-black  '>
               <div className='flex space-x-3 mb-5'>
                 <p className='text-lg font-bold'>Name</p>
                 <p className='font-medium'>{employee?.userId?.name || "N/A"}</p>

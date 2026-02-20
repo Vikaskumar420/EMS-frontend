@@ -88,12 +88,12 @@ const List = () => {
           className='px-4 py-0.5 bg-white rounded-lg border' />
 
         <Link to="/admin-dashboard/add-employee"
-          className='px-4 py-1 bg-teal-600 rounded-lg text-white hover:bg-teal-700'
+          className='px-4 py-1 bg-teal-500 font-bold hover:-translate-1 transition-all duration-300 shadow-lg hover:shadow-black hover:text-shadow-2xs text-shadow-black rounded-lg text-white hover:bg-teal-600'
         >
           Add New Employee
         </Link>
       </div>
-      <div className='mt-6'>
+      <div className='mt-6 shadow-md shadow-black'>
         <DataTable columns={columns} data={filteredEmployees} pagination />
       </div>
     </div>

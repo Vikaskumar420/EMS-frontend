@@ -59,7 +59,9 @@ const Navbar = () => {
 
   return (
     <div className="relative flex items-center text-white justify-between h-12 bg-teal-600 px-5">
-      <p>Welcome {user.name}</p>
+      <p
+      className=''
+      >Welcome {user.name}</p>
 
       <div className="relative">
         {/* Profile Image */}
@@ -80,7 +82,7 @@ const Navbar = () => {
 
             <button
               onClick={logout}
-              className="w-full px-4 py-2 text-sm font-bold text-red-600 hover:text-white hover:rounded-lg hover:bg-gray-900"
+              className="w-full px-4 py-2 text-sm font-bold text-red-600 hover:text-white  shadow-lg shadow-black  hover:bg-gray-900"
             >
               Logout
             </button>

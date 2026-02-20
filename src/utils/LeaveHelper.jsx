@@ -63,7 +63,7 @@ export const LeaveButton = ({ Id }) => {
     return (
         <div>
             <button
-                className="px-5 py-1 bg-teal-600 text-white rounded-md hover:bg-teal-800"
+                className="px-5 py-1 bg-teal-500  text-white shadow-lg rounded-md hover:bg-teal-700"
                 onClick={() => handleView(Id)}
             >
                 View

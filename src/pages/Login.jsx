@@ -46,8 +46,8 @@ const Login = () => {
         <div className='flex flex-col justify-center items-center h-screen w-screen
      bg-linear-to-b from-teal-600 from-50% to-gray-100 to-50% space-y-6' >
 
-            <h2 className='font-sevillana font-bold text-shadow-2xs text-3xl text-white'>Employee Management System</h2>
-            <div className='border shadow p-6 w-80 bg-white'>
+            <h2 className='font-sevillana font-bold text-shadow-2xs text-shadow-black text-3xl text-white'>Employee Management System</h2>
+            <div className='  p-6 w-80 bg-white border hover:border-none hover:shadow-md shadow-black'>
                 <h2 className='text-2xl font-bold mb-4'>Login</h2>
                 {error && <p className='text-red-500'>{error}</p>}
 
@@ -56,7 +56,7 @@ const Login = () => {
                         <label htmlFor="email" className='block text-gray-700'>Email</label>
                         <input
                             type="email"
-                            className='w-full px-3 py-2 border'
+                            className='w-full px-3 py-2 border hover:border-none hover:shadow-md  shadow-black '
                             placeholder='Enter email'
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -66,7 +66,7 @@ const Login = () => {
                         <label htmlFor="password" className='block text-gray-700'>password</label>
                         <input
                             type="password"
-                            className='w-full px-3 py-2 border'
+                            className='w-full px-3 py-2 border hover:border-none hover:shadow-md  shadow-black'
                             placeholder='********'
                             onChange={(e) => setPassword(e.target.value)}
                             required
@@ -74,7 +74,7 @@ const Login = () => {
                     </div>
                     <div className='mb-4 flex items-center justify-center gap-5'>
                         <label className='inline-flex items-center'>
-                            <input type="checkbox" className='form-checkbox' />
+                            <input type="checkbox" className='form-checkbox ' />
                             <span className='ml-2 text-gray-700'>Remember me</span>
                         </label>
                         <a href="#" className='text-teal-600'>
@@ -85,7 +85,7 @@ const Login = () => {
                     <button
                         type="submit"
 
-                        className='w-full bg-teal-600 p-2 text-white cursor-pointer'>
+                        className='w-full bg-teal-600 p-2 text-white cursor-pointer hover:shadow-lg hover:rounded-md shadow-black font-bold text-shadow-2xs text-shadow-black'>
                         Login
                     </button>
                 </form>
